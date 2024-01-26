@@ -12,7 +12,7 @@ export default function Home() {
             Welcome to CloudCube.
             <br />
             <br />
-            Storing everythin for you and your business needs. All in one place.
+            Storing everything for you and your business needs. All in one place.
           </h1>
           <p>
             Enhance your personal storage with CloudCube, offering a simple and efficent way 
