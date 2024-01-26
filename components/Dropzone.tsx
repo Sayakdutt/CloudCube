@@ -7,6 +7,7 @@ import { addDoc, collection, doc, serverTimestamp, updateDoc } from "firebase/fi
 import { db } from "@/firebase";
 import {storage} from "@/firebase";
 import {  getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import toast from "react-hot-toast";
 
 const Dropzone = () => {
   const [loading, setLoading] = useState(false);
@@ -29,6 +30,7 @@ const Dropzone = () => {
     if (loading) return;
     if(!user) return;
     setLoading(true);
+    const toastId = toast.loading("Uploading...");
 
     //do what needs to be done
     //addDoc -> users/user123/files
@@ -47,7 +49,10 @@ const Dropzone = () => {
       await updateDoc(doc(db,"users",user.id,"files",docRef.id),{
         downloadURL: downloadURL,
       });
-    })
+    });
+    toast.success("Uploaded Successfully",{
+      id: toastId,
+    });
 
     setLoading(false);
   };
@@ -86,6 +91,7 @@ const Dropzone = () => {
               {isDragReject && "File type not accepted"}
               {isFileTooLarge && (
                 <div className="text-danger mt-2">File is too Large</div>
+
               )}
             </div>
           </section>
