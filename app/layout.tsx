@@ -21,8 +21,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    
       <html lang="en">
+        <ClerkProvider>
         <body className={inter.className}>
           <ThemeProvider
             attribute="class"
@@ -35,7 +36,7 @@ export default function RootLayout({
             <Toaster />
           </ThemeProvider>
         </body>
+        </ClerkProvider>
       </html>
-    </ClerkProvider>
   );
 }
