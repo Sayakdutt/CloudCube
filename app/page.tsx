@@ -18,7 +18,7 @@ export default function Home() {
             Enhance your personal storage with CloudCube, offering a simple and efficent way 
             to upload, organize, and access files from anywhere.
             Securely store important documents and media, and experience the convenience of easy
-            file management and sharing i one centralized solution.
+            file management and sharing in one centralized solution.
           </p>
 
           <Link href="/dashboard" className="flex cursor-pointer bg-blue-500 hover:bg-blue-400 p-2 md:p-5 w-fit">
